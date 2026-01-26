@@ -40,8 +40,5 @@ This project applies **Social Network Analysis (SNA)** to identify the most infl
 ## 💡 Insights
 This project demonstrates how social media data can be transformed into actionable insights using network analysis. The approach is applicable to areas such as **digital marketing, community analysis, and social media intelligence**.
 
-## 📄 License
-This project is licensed under the **MIT License**.
-
 ## 👩‍💻 Author
 Najma Zahira Layalia Marsyafathanya  & Amalia Najwannisa
