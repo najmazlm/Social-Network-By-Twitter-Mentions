@@ -5,32 +5,6 @@ import matplotlib.pyplot as plt
 
 
 df = pd.read_excel('mention theeras clean2.xlsx')
-df
-
-"""G = nx.from_pandas_edgelist(df, source="username", target="mention")
-
-fig = plt.subplots(figsize=(100,100))
-#plt.margins(.2,.2)
-nx.draw(G,
-        #pos=nx.circular_layout(G),
-        with_labels=True,
-        node_color='lightblue',
-        node_size=300)
-plt.show()
-
-G = nx.from_pandas_edgelist(df, source="username", target="mention")
-
-fig = plt.subplots(figsize=(50,50))
-#plt.margins(.2,.2)
-nx.draw(G,
-        pos=nx.kamada_kawai_layout(G),
-        with_labels=True,
-        node_color='red',
-        node_size=3000,
-        edge_color='black')
-#plt.title("Grafik Follower Taylor Swift")
-plt.show()
-"""
 
 G = nx.from_pandas_edgelist(df, source="username", target="mention", create_using=nx.DiGraph())
 
@@ -53,7 +27,7 @@ edge_widths = [G[u][v].get('weight', 0) for u, v in G.edges()]
 
 # Menggambar grafik jaringan
 fig = plt.subplots(figsize=(50,50))
-pos = nx.spring_layout(G)  # Anda dapat menggunakan layout yang sesuai dengan data Anda
+pos = nx.spring_layout(G) 
 nx.draw(G, pos, with_labels=True, node_size=node_sizes, node_color='red')
 
 # Menampilkan grafik
@@ -73,7 +47,6 @@ print("Jumlah nodes:", num_nodes)
 print("Jumlah edges:", num_edges)
 
 DC = nx.degree_centrality(G)
-DC
 
 # Convert the 'DC' dictionary into a Pandas Series
 centrality_series = pd.Series(DC)
@@ -83,4 +56,3 @@ top_10_centrality = centrality_series.nlargest(10)
 
 # Convert the resulting Series back into a Pandas DataFrame
 top_10_df = top_10_centrality.to_frame()
-top_10_df
