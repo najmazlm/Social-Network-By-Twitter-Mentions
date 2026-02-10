@@ -16,11 +16,11 @@
 
 # Crawl Data
 
-filename = 'theerastour3.csv'
-search_keyword = 'the eras tour'
+filename = 'FILENAME'
+search_keyword = 'KEYWORD'
 limit = 7000
 
-!npx --yes tweet-harvest@latest -o "{filename}" -s "{search_keyword}" -l {limit} --token ""
+!npx --yes tweet-harvest@latest -o "{filename}" -s "{search_keyword}" -l {limit} --token "YOUR_TWITTER_BEARER_TOKEN"
 
 import pandas as pd
 
